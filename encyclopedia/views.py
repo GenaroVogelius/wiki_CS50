@@ -20,7 +20,7 @@ class SearchForm(forms.Form):
     )
 
 
-class CreateFormArea(forms.Form):
+class CreateForms(forms.Form):
     description = forms.CharField(
         max_length=1000,
         widget=forms.Textarea(
@@ -31,8 +31,6 @@ class CreateFormArea(forms.Form):
         ),
     )
 
-
-class CreateFormTitle(forms.Form):
     title = forms.CharField(
         max_length=100,
         widget=forms.Textarea(
@@ -42,6 +40,7 @@ class CreateFormTitle(forms.Form):
             }
         ),
     )
+
 
 
 # variables universales
@@ -119,8 +118,12 @@ def search(request):
 
 
 def create(request):
-    formBody = CreateFormArea()
-    formTitle = CreateFormTitle()
+    createForm = CreateForms() 
+    # instanciaste la clase formulario en la variable createForm
+    formBody = createForm["description"]
+    formTitle = createForm["title"]
+    # accedes a los formularios que tiene dentro con el nombre de la variable[ " " ] dentro de los parentesis pones el nombre del formulario que esta dentro de la clase a la cual queres acceder.
+
     return render(
         request,
         "encyclopedia/new.html",
@@ -135,10 +138,9 @@ def create(request):
 
 def check(request):
     if request.method == "POST":
-        formularioT = CreateFormTitle(request.POST)
-        formularioB = CreateFormArea(request.POST)
-        if formularioT.is_valid() and formularioB.is_valid():
-            title = formularioT.cleaned_data["title"]
+        formulario = CreateForms(request.POST)
+        if formulario.is_valid():
+            title = formulario.cleaned_data["title"]
             for pagina in paginas:
                 if pagina.upper() == title.upper():
                     return render(
@@ -150,7 +152,7 @@ def check(request):
             util.save_entry(title, content)
             return HttpResponseRedirect(reverse("encyclopedia:page", args=[title]))
         else:
-            return render(request, "encyclopedia/error.html", {"error": "There is an error in the forms"})
+            return render(request, "encyclopedia/error.html", {"error": formulario})
 
 
 
