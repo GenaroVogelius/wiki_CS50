@@ -1,0 +1,19 @@
+{%extends "encyclopedia/layout.html"%}
+{%block title%}
+    Encyclopedia
+{%endblock%}
+
+{%block body%}
+    <h1>All Pages</h1>
+    <div class="container-fluid">
+    <ul>
+        {%for entry in entries%}
+            <li> 
+                <a href="{% url 'encyclopedia:page' entry=entry%}"> {{ entry }} </a>
+            </li>
+            {% comment %} pones entry= entry porque en viwes.py page esta esperando saber que valor va a tener wiki/<str:entry> {% endcomment %}
+        {%endfor%}
+    </ul>
+    </div>
+
+{%endblock%}

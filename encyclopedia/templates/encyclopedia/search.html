@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    Recomendations
+{% endblock %}
+
+{% block body %}
+    <h1>Possible results:</h1>
+
+    <ul>
+        {% for busqueda in recomend %}
+            <li> 
+                <a href="{% url 'encyclopedia:page' entry=busqueda%}"> {{ busqueda }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
