@@ -41,7 +41,16 @@ class CreateForms(forms.Form):
         ),
     )
 
-
+class FormEdit(forms.Form):
+        contentForm = forms.CharField(
+            max_length=1000,
+            widget=forms.Textarea(
+                attrs={
+                    "class": "description",
+                }
+            ),
+            # initial="",
+        )
 
 # variables universales
 form = SearchForm()
@@ -153,22 +162,6 @@ def check(request):
             return HttpResponseRedirect(reverse("encyclopedia:page", args=[title]))
         else:
             return render(request, "encyclopedia/error.html", {"error": formulario})
-
-
-
-
-
-class FormEdit(forms.Form):
-        contentForm = forms.CharField(
-            max_length=1000,
-            widget=forms.Textarea(
-                attrs={
-                    "class": "description",
-                }
-            ),
-            # initial="",
-        )
-
 
 
 def edit(request, entry):

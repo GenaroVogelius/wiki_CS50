@@ -1,4 +1,4 @@
-// sass --watch style.scss style.css
+// sass --watch style.scss estilos.css
 
 * {
     margin: 0;
@@ -13,6 +13,7 @@ label {
 body {
     margin: 0;
     background-color: white;
+    overflow: hidden;
 }
 
 code {
@@ -22,6 +23,11 @@ code {
 h1 {
     margin-top: 0px;
     padding-top: 20px;
+}
+
+
+.row {
+    flex-wrap: nowrap;
 }
 
 .form {
@@ -40,7 +46,7 @@ h1 {
     padding: 0 0.2rem;
     border-radius: 15px;
     padding: 0.3rem 0.5rem;
-
+    resize: none;
     background: #fff;
     border: 1px solid #dfe1e5;
     box-shadow: none;
@@ -49,6 +55,7 @@ h1 {
 
 .create_title {
     height: 6vh;
+    resize: none;
     width: 100%;
     grid-column: 1;
     padding: 0.3rem 0.5rem;
@@ -80,21 +87,23 @@ h1 {
     height: 1.8rem;
 }
 
-.submit__bottom__search {
-    margin-top: 0.3rem;
-    padding: 0 0.3rem;
-    width: 5rem;
-    border: 1px solid #f8f9fa;
-    border-radius: 4px;
-    color: #3c4043;
-    font-family: arial, sans-serif;
-    
-    line-height: 27px;
-    
-    min-width: 54px;
-    text-align: center;
-    background-color: darkgray;
-    user-select: none
+// .submit__bottom__search {
+//     margin-top: 0.3rem;
+//     padding: 0 0.3rem;
+//     width: 5rem;
+//     border: 1px solid #f8f9fa;
+//     border-radius: 4px;
+//     color: #3c4043;
+//     font-family: arial, sans-serif;
+//     line-height: 27px;
+//     min-width: 54px;
+//     text-align: center;
+//     background-color: darkgray;
+//     user-select: none
+// }
+
+.btn-success {
+    padding: 0.2rem;
 }
 
 .submit__bottom {
@@ -130,6 +139,7 @@ h1 {
     background-color: #f0f0f0;
     height: 100vh;
     padding: 20px;
+    margin-right: 1rem;
 }
 
 .sidebar h2 {
@@ -137,7 +147,7 @@ h1 {
 }
 
 
-.hyper__buttom{
+.hyper__buttom {
     text-align: center;
     width: 100%;
     margin-top: 0.8rem;
