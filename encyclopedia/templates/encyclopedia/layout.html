@@ -16,7 +16,7 @@
                     <form action="{% url 'encyclopedia:search' %}" method="POST" class="form__search">
                         {% csrf_token %}
                         {{ form }}
-                        <input type="submit" value= "Buscar" class="btn btn-success mt-1"/>
+                        <input type="submit" value= "Buscar"  id="searchB" class="btn btn-success mt-1"/>
                     </form>
                     <div class="hyper__buttom">
                         <a href="{% url 'encyclopedia:index' %}">Home</a>
