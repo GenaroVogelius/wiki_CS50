@@ -1,22 +1,26 @@
 {%load static%}
 
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <title>{%block title%}{%endblock%}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="{% static 'encyclopedia/estilo.css' %}" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=
+            , initial-scale=1.0">
+
+        <link href="{% static 'encyclopedia/estilos.css' %}" rel="stylesheet">
     </head>
     <body>
         <div class="container col-sm-12 col-md-12">
             <div class="row">
                 <div class="sidebar col-lg-2 col-md-3 col-sm-4">
-                    <h2>Wiki</h2>
+                    <h2 class="title">Wiki</h2>
                     <form action="{% url 'encyclopedia:search' %}" method="POST" class="form__search">
                         {% csrf_token %}
                         {{ form }}
-                        <input type="submit" value= "Buscar"  id="searchB" class="btn btn-success mt-1"/>
+                        <input type="submit" value= "Search"  id="searchB" class="btn btn-success mt-1 mb-2"/>
                     </form>
                     <div class="hyper__buttom">
                         <a href="{% url 'encyclopedia:index' %}">Home</a>
@@ -36,6 +40,5 @@
                 </div>
             </div>
         </div>
-
     </body>
 </html>

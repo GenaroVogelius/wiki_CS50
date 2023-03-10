@@ -23,6 +23,21 @@ h1 {
   padding-top: 20px;
 }
 
+a {
+  color: black;
+  border-bottom: 1px solid #6fc909;
+  transition: 0.4s;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.title {
+  text-align: center;
+}
+
 .row {
   flex-wrap: nowrap;
 }
@@ -45,7 +60,6 @@ h1 {
   resize: none;
   background: #fff;
   border: 1px solid #dfe1e5;
-  box-shadow: none;
 }
 
 .create_title {
@@ -77,45 +91,16 @@ h1 {
   height: 1.8rem;
 }
 
-.submit__bottom__search {
-  margin-top: 0.3rem;
-  padding: 0 0.3rem;
-  width: 5rem;
-  border: 1px solid #f8f9fa;
-  border-radius: 4px;
-  color: #3c4043;
-  font-family: arial, sans-serif;
-  line-height: 27px;
-  min-width: 54px;
-  text-align: center;
-  background-color: darkgray;
-  user-select: none;
+.btn-success {
+  padding: 0.2rem;
 }
 
-.submit__bottom {
+.btn-primary, .btn-danger {
   margin-top: 0.3rem;
-  padding: 0 0.3rem;
   width: auto;
   grid-column: 2;
   justify-self: end;
-  border: 1px solid #f8f9fa;
-  border-radius: 4px;
-  color: #3c4043;
-  font-family: arial, sans-serif;
   padding: 0 16px;
-  line-height: 27px;
-  height: 36px;
-  min-width: 54px;
-  text-align: center;
-  background-color: gray;
-  user-select: none;
-}
-.submit__bottom:hover {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  background-color: #f8f9fa;
-  border: 1px solid #dadce0;
-  border: 1px solid #dadce0;
-  color: #202124;
 }
 
 .sidebar {
@@ -132,7 +117,9 @@ h1 {
 .hyper__buttom {
   text-align: center;
   width: 100%;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
+  background: linear-gradient(181deg, #716e6e, transparent);
+  border-radius: 1rem;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=estilos.css.map */
