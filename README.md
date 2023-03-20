@@ -2,6 +2,8 @@
 ## Description
 CS50’s [Web Programming with Python and JavaScript](https://cs50.harvard.edu/web/2020/) Project 1 - [Wiki](https://cs50.harvard.edu/web/2020/projects/1/wiki)
 
+# <a href="https://www.linkedin.com/posts/genaro-vogelius-3a9332142_python-django-html-activity-7040353927237672960-aZwk?utm_source=share&utm_medium=member_android"> Live Demo</a>
+
 ## Project description
 Design a Wikipedia-like online encyclopedia.
 
